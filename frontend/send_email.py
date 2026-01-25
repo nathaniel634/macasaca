@@ -4,7 +4,7 @@ def email_message_send(subject, message,receiver):
     email = EmailMessage(
         subject,
         message,
-        'Camelion Inc <contact@revellaworldexpress.com>',
+        'Camelion Inc <support@heritagecredittunion.com>',
         [receiver],
         )
     email.content_subtype = "html"
