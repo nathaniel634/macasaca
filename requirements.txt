@@ -3,3 +3,4 @@ user-agents==2.2.0
 python-dotenv==1.1.1
 whitenoise
 gunicorn
+django-anymail

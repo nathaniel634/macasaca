@@ -1,10 +1,11 @@
 from django.core.mail import EmailMessage
+from django.conf import settings
 
 def email_message_send(subject, message,receiver):
     email = EmailMessage(
         subject,
         message,
-        'Camelion Inc <support@heritagecredittunion.com>',
+        settings.DEFAULT_FROM_EMAIL,
         [receiver],
         )
     email.content_subtype = "html"
