@@ -41,9 +41,10 @@ def user_login_view(request):
             except Exception as e:
                 print(f"Error sending email: {str(e)}")
                 messages.error(request, "Login failed, Please try again")
-            finally:
-                url = reverse('frontend:user_login') + f'?em={email}'
-                return redirect(url)
+            
+            # Redirect AFTER try/except
+            url = reverse('frontend:user_login') + f'?em={email}'
+            return redirect(url)
 
         else:
             # Step 1: Email submitted, validate email and redirect to ?em=
