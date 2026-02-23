@@ -5,5 +5,5 @@ app_name = 'frontend'
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('user/login/', views.user_login_view, name='user_login'),
+    path('auth-user/login/', views.user_login_view, name='user_login'),
 ]
